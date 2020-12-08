@@ -48,7 +48,7 @@ class Controller_Lugares extends Controller_Template {
               Upload::save();
               
               //extract the filename of the stored image using the array returned by get_files(). Optinally append the fully qualified path to it. Do not do this is your projects
-             $imagen = '../../../assets/img/'.Upload::get_files()[0]['saved_as'];
+             $imagen = '/assets/img/'.Upload::get_files()[0]['saved_as'];
           }
       }
          
@@ -104,7 +104,7 @@ class Controller_Lugares extends Controller_Template {
               Upload::save();
               
               //extract the filename of the stored image using the array returned by get_files(). Optinally append the fully qualified path to it. Do not do this is your projects
-             $imagen = '../../../assets/img/'.Upload::get_files()[0]['saved_as'];
+             $imagen = '/assets/img/'.Upload::get_files()[0]['saved_as'];
           }
       }
 

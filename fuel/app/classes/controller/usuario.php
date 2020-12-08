@@ -1,67 +1,70 @@
 <?php
 
+use Fuel\Core\Controller_Template;
 use Fuel\Core\Input;
 
-class Controller_Usuario extends Controller_Template { 
-      public $template = 'usuario/layout'; 
-      public function action_index() { 
-         
-        // Crear la vista del objeto
+class Controller_Usuario extends Controller
+{
+  
+   public function action_index()
+   {
 
-        $view = View::forge('usuario/index');  
-        
-        // buscar el libro de la base de datos y configurarlo en la vista  
-       
+      // Crear la vista del objeto
 
-        $this->template->title = "Programa index page"; 
-        $this->template->content = $view; 
-     } 
-      public function action_platos() { 
-         
-         // Crear la vista del objeto
 
-         $view = View::forge('usuario/platos');  
-         
-         // buscar el libro de la base de datos y configurarlo en la vista 
+      return  View::forge('usuario/index');
 
-         $platos = Model_Platos::find('all'); 
-         $view->set('platos', $platos);  
-        
+      // buscar el libro de la base de datos y configurarlo en la vista  
 
-         $this->template->title = "Programa index page"; 
-         $this->template->content = $view; 
-      } 
 
-      public function action_lugares() { 
-         
-        // Crear la vista del objeto
 
-        $view = View::forge('usuario/lugares');  
-        
-        // buscar el libro de la base de datos y configurarlo en la vista 
-
-        $lugares = Model_Lugares::find('all'); 
-        $view->set('lugares', $lugares);  
-       
-
-        $this->template->title = "Programa index page"; 
-        $this->template->content = $view; 
-     } 
-
-     public function action_museos() { 
-         
-        // Crear la vista del objeto
-
-        $view = View::forge('usuario/museos');  
-        
-        // buscar el libro de la base de datos y configurarlo en la vista 
-
-        $museos = Model_Museos::find('all'); 
-        $view->set('museos', $museos);  
-       
-
-        $this->template->title = "Programa index page"; 
-        $this->template->content = $view; 
-     } 
       
    }
+   public function action_platos()
+   {
+
+      // Crear la vista del objeto
+
+      $view = View::forge('usuario/platos');
+
+      // buscar el libro de la base de datos y configurarlo en la vista 
+
+      $platos = Model_Platos::find('all');
+      return $view->set('platos', $platos);
+
+      
+   }
+
+   public function action_lugares()
+   {
+
+      // Crear la vista del objeto
+
+      $view = View::forge('usuario/lugares');
+
+      // buscar el libro de la base de datos y configurarlo en la vista 
+
+      $lugares = Model_Lugares::find('all');
+      return $view->set('lugares', $lugares);
+
+
+      
+   }
+
+   public function action_museos()
+   {
+
+      // Crear la vista del objeto
+
+
+      $view = View::forge('usuario/museos');
+
+      // buscar el libro de la base de datos y configurarlo en la vista 
+
+      $museos = Model_Museos::find('all');
+      return $view->set('museos', $museos);
+
+
+      
+   }
+}
